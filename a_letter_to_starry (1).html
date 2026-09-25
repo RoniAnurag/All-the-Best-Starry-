@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Starry...</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #050914; /* Deep night sky color */
+            color: #e2e8f0;
+            font-family: 'Cormorant Garamond', serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Canvas background */
+        #star-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Scroll indicator animation */
+        @keyframes bounce-fade {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); opacity: 0.8; }
+            40% { transform: translateY(-10px); opacity: 0.4; }
+            60% { transform: translateY(-5px); opacity: 0.6; }
+        }
+        .scroll-indicator {
+            animation: bounce-fade 3s infinite;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.1em;
+        }
+
+        /* Fade-in on scroll classes */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.5s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Soft text glow for emphasis */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Subtle glowing divider */
+        .glow-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            margin: 4rem auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gray-700 selection:text-white">
+
+    <canvas id="star-canvas"></canvas>
+
+    <main class="relative z-10 flex flex-col items-center w-full px-6 sm:px-12 md:px-24">
+        
+        <section class="min-h-screen flex flex-col items-center justify-center text-center w-full max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-light mb-6 tracking-wide text-glow">For Starry</h1>
+            <p class="text-lg md:text-xl font-light text-gray-400 italic mb-24">Take a deep breath, and read slowly...</p>
+            
+            <div class="absolute bottom-12 scroll-indicator flex flex-col items-center gap-2">
+                <span class="text-xs uppercase tracking-widest text-gray-500">Scroll</span>
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <div class="w-full max-w-2xl mx-auto pb-48 text-xl md:text-2xl leading-relaxed md:leading-loose text-gray-300 font-light space-y-32">
+            
+            <p class="reveal-section text-center italic">
+                "Thank you so much for everything, Starry."
+            </p>
+
+            <p class="reveal-section">
+                I will forever cherish the beautiful memories and moments we’ve shared. Time always seemed to slip away so fast whenever I talked to you. Thank you for the privilege of being your best spiritual friend.
+            </p>
+
+            <p class="reveal-section">
+                I’m truly sorry for my shortcomings. Perhaps I wasn't the best friend to you, because while you only ever asked for friendship, I couldn't help but give you my heart and my love. 
+            </p>
+
+            <div class="reveal-section glow-divider"></div>
+
+            <p class="reveal-section">
+                To be honest, it is incredibly hard for me to get through my days and nights without you. But since there is no clarity between us after all this time and bonding, I guess your words—<span class="italic text-gray-400">"no hope"</span>—have finally come true.
+            </p>
+
+            <p class="reveal-section">
+                There are so many wonderful people in this world, and I truly hope you find happiness with someone who is right for you. Please, always stay happy. I know you are preparing for your exams right now, and I wish you all the very best. As just a friend, I don't want to be a distraction. I’ll step back and let you focus, without calling or disturbing you anymore.
+            </p>
+
+            <p class="reveal-section">
+                I know there were times you felt guilty, and I never wanted to be the cause of that burden. There were times you tried to walk away, but I just couldn't let you go. I kept chasing you, holding on tighter. 
+            </p>
+
+            <p class="reveal-section text-center text-2xl md:text-3xl font-medium text-gray-200 my-16">
+                "We were, we are, and we will just be friends, right?"
+            </p>
+
+            <p class="reveal-section">
+                You tried so hard to make me understand, and I was just too blind to see it. I’m sorry for that. I realize now that I am not the perfect guy for you. I am not the person you wanted, and I accept my limitations.
+            </p>
+
+            <p class="reveal-section">
+                Focus on your exams, fellow. Prepare well. Even from a distance, Anurag will always be in the crowd, cheering for you and appreciating you. 
+            </p>
+
+            <div class="reveal-section p-8 border border-gray-800 bg-gray-900/30 rounded-lg shadow-2xl backdrop-blur-sm">
+                <p class="mb-4">
+                    Whenever you feel like no one is with you, remember that Jesus is always there, and your BSF is right behind you <span class="text-sm italic text-gray-500">(just a reminder)</span>. Whenever you feel low, sad, or alone, go to Jesus.
+                </p>
+                <p>
+                    And please remember that I am here for you, too. Even if you don't choose me, even if you choose someone else to share your life with, I will always care about you. If you ever feel alone, or if dark, self-harming thoughts ever cross your mind, please reach out to me—at least as a friend, if you can accept me as one.
+                </p>
+            </div>
+
+            <p class="reveal-section">
+                I want to share many more things to you And remember All the moments and memories we had, but ig this is not the right time, Until your exams are over, I promise I won't disturb, call, or text you. But the door is always open—if you ever feel low, you can always reach out in between. Let's keep this boundary for 365 days. I need this time to fix myself and mend my broken heart. So, let’s begin, Starry.
+            </p>
+
+            <p class="reveal-section text-gray-100 font-normal">
+                Before I go... please, please, please keep me in your prayers. I need them desperately right now to be honest. I am facing a situation that feels like life and death.
+            </p>
+
+            <p class="reveal-section text-gray-400 italic">
+                Please pray for me, as I write this message with so much pain, and a truly shattered  heart.
+            </p>
+
+            <div class="reveal-section pt-24 text-center">
+                <p class="text-lg font-sans tracking-widest text-gray-500 mb-2">Yours sincerely,</p>
+                <p class="text-3xl md:text-4xl text-glow">Anurag</p>
+            </div>
+            
+            <div class="reveal-section mt-32 flex flex-col items-center">
+                <p class="text-sm uppercase tracking-widest text-gray-500 mb-8">The 365 Days Boundary</p>
+                <div class="flex gap-4 sm:gap-8 md:gap-12 font-sans">
+                    <div class="flex flex-col items-center">
+                        <span id="countdown-days" class="text-4xl md:text-6xl font-light text-glow text-gray-200">365</span>
+                        <span class="text-[10px] md:text-xs tracking-widest text-gray-500 uppercase mt-3">Days</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="countdown-hours" class="text-4xl md:text-6xl font-light text-glow text-gray-200">00</span>
+                        <span class="text-[10px] md:text-xs tracking-widest text-gray-500 uppercase mt-3">Hours</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="countdown-minutes" class="text-4xl md:text-6xl font-light text-glow text-gray-200">00</span>
+                        <span class="text-[10px] md:text-xs tracking-widest text-gray-500 uppercase mt-3">Minutes</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span id="countdown-seconds" class="text-4xl md:text-6xl font-light text-glow text-gray-200">00</span>
+                        <span class="text-[10px] md:text-xs tracking-widest text-gray-500 uppercase mt-3">Seconds</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        // --- Scroll Reveal Logic ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal-section");
+
+            const revealOptions = {
+                threshold: 0.15, // Trigger when 15% of the element is visible
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add("active");
+                    // Optional: Stop observing once revealed
+                    // observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+
+        // --- Starry Background Canvas Logic ---
+        const canvas = document.getElementById('star-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let stars = [];
+        let shootingStars = [];
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            initStars();
+        }
+
+        class Star {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 1.5;
+                this.baseAlpha = Math.random() * 0.5 + 0.1;
+                this.alpha = this.baseAlpha;
+                this.fadeRate = (Math.random() * 0.02) - 0.01;
+            }
+            update() {
+                this.alpha += this.fadeRate;
+                if (this.alpha <= 0.1 || this.alpha >= this.baseAlpha + 0.4) {
+                    this.fadeRate = -this.fadeRate;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+                ctx.fill();
+            }
+        }
+
+        class ShootingStar {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = 0;
+                this.len = Math.random() * 80 + 20;
+                this.speed = Math.random() * 10 + 5;
+                this.size = Math.random() * 1 + 0.5;
+                this.active = false;
+                // Wait for a random time before appearing
+                this.waitTime = Math.random() * 500 + 100;
+            }
+            update() {
+                if(this.active) {
+                    this.x -= this.speed;
+                    this.y += this.speed;
+                    if(this.x < 0 || this.y > height) {
+                        this.reset();
+                    }
+                } else {
+                    this.waitTime--;
+                    if(this.waitTime <= 0) this.active = true;
+                }
+            }
+            draw() {
+                if(!this.active) return;
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x + this.len, this.y - this.len);
+                ctx.lineWidth = this.size;
+                ctx.strokeStyle = `rgba(255, 255, 255, 0.2)`;
+                ctx.stroke();
+            }
+        }
+
+        function initStars() {
+            stars = [];
+            shootingStars = [];
+            const numStars = Math.floor((width * height) / 4000); // Responsive star count
+            for (let i = 0; i < numStars; i++) {
+                stars.push(new Star());
+            }
+            for (let i = 0; i < 3; i++) {
+                shootingStars.push(new ShootingStar());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            stars.forEach(star => {
+                star.update();
+                star.draw();
+            });
+
+            shootingStars.forEach(sStar => {
+                sStar.update();
+                sStar.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        // Start everything
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+
+        // --- Countdown Timer Logic ---
+        // Set target date to exactly 365 days from today (September 25, 2026)
+        const targetDate = new Date("September 25, 2027 00:00:00").getTime();
+
+        const timerInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // If the countdown is over
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.getElementById("countdown-days").innerText = "0";
+                document.getElementById("countdown-hours").innerText = "00";
+                document.getElementById("countdown-minutes").innerText = "00";
+                document.getElementById("countdown-seconds").innerText = "00";
+                return;
+            }
+
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update DOM with padded zeros for layout consistency
+            document.getElementById("countdown-days").innerText = days;
+            document.getElementById("countdown-hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("countdown-minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("countdown-seconds").innerText = seconds.toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
